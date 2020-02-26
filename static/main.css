@@ -38,7 +38,7 @@ td {
 }
 
 tr:hover {
-  background-color: hsla(0, 0%, 50%, 25%);
+  background-color: hsla(210, 90%, 50%, 12.5%);
 }
 
 tr:nth-child(even) {
@@ -46,7 +46,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(even):hover {
-  background-color: hsla(0, 0%, 50%, 35%);
+  background-color: hsla(210, 90%, 50%, 15%);
 }
 
 /* Align class names to the right for better readability and highlight them. */
