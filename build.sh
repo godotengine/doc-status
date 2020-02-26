@@ -23,7 +23,7 @@ EOF
 # Trim the first line of the output to get a valid Markdown table.
 python3 "$TMP/doc/tools/doc_status.py" -u "$TMP/doc/classes" | tail -n +2 >> content/_index.md
 
-# Build the website.
-hugo
+# Build the website with optimizations enabled.
+hugo --minify
 
 rm -rf "$TMP"
