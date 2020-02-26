@@ -1,6 +1,6 @@
 os: linux
 dist: bionic
-# Python is required to run `doc_status.py`
+# Python is required to run `doc_status.py`.
 language: python
 
 python:
