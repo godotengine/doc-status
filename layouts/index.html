@@ -12,5 +12,17 @@
   </head>
   <body>
     {{ .Content }}
+
+    <script>
+      // Color percentages in the Overall column depending on completion.
+      // Lower completion percentages are highlighted with a red background.
+      document.querySelectorAll('td:nth-child(9)').forEach(td => {
+        const percentage = td.innerText.substring(0, td.innerText.length - 1);
+
+        if (percentage < 100) {
+          td.style.backgroundColor = `hsla(0, 100%, 50%, ${0.334 - percentage / 300.0})`;
+        }
+      })
+    </script>
   </body>
 </html>
