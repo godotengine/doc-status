@@ -13,3 +13,18 @@ install:
 
 script:
   - ./build.sh
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: public
+  github_token: $GITHUB_TOKEN
+
+  # Deploy to an organization repository's `master` branch to benefit from
+  # a shorter, prettier URL.
+  repo: godot-doc-status/godot-doc-status.github.io
+  target_branch: master
+
+  # Only deploy from the `master` branch.
+  on:
+    branch: master
