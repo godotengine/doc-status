@@ -1,12 +1,14 @@
 :root {
   --body-background-color: hsl(0, 0%, 100%);
   --body-color: hsl(0, 0%, 25%);
+  --link-color: hsl(210, 90%, 50%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --body-background-color: hsl(0, 0%, 20%);
     --body-color: hsl(0, 0%, 85%);
+    --link-color: hsl(210, 100%, 80%);
   }
 }
 
@@ -15,6 +17,15 @@ body {
   color: var(--body-color);
   /* Use a modern font stack inspired by Bootstrap 4. */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 table {
