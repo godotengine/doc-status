@@ -1,0 +1,6 @@
+baseURL = "https://godot-doc-status.github.io/"
+languageCode = "en-us"
+title = "Godot class reference status"
+
+# This is a single-page website, no need to generate a sitemap and RSS feed.
+disableKinds = ["sitemap", "RSS"]

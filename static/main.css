@@ -1,0 +1,45 @@
+:root {
+  --body-background-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 25%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background-color: hsl(0, 0%, 20%);
+    --body-color: hsl(0, 0%, 85%);
+  }
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+  /* Use a modern font stack inspired by Bootstrap 4. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid hsla(0, 0%, 50%, 50%);
+  padding: 0.25rem 0.5rem;
+}
+
+tr:hover {
+  background-color: hsla(0, 0%, 50%, 25%);
+}
+
+tr:nth-child(even) {
+  background-color: hsla(0, 0%, 50%, 10%);
+}
+
+tr:nth-child(even):hover {
+  background-color: hsla(0, 0%, 50%, 35%);
+}
+
+/* Align class names to the right for better readability and highlight them. */
+td:first-child {
+  font-weight: bold;
+  text-align: right;
+}
