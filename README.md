@@ -2,6 +2,10 @@
 
 View the completion status of the Godot class reference (updated daily).
 
+Generated HTML pages are deployed to the
+[godot-doc-status.github.io](https://github.com/godot-doc-status/godot-doc-status.github.io)
+repository automatically using Travis CI.
+
 ## [View](https://godot-doc-status.github.io/)
 
 ## License
