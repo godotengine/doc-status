@@ -15,11 +15,16 @@
 
     <script>
       // Color percentages in the Overall column depending on completion.
-      // Lower completion percentages are highlighted with a red background,
-      // whereas higher completion percentages are highlighted with a green background.
+      // Fully completed documentations are highlighted with a green background.
+      // Incomplete documentations have a red background whose opacity depends on the
+      // percentage (lower is more opaque).
       document.querySelectorAll('td:nth-child(9)').forEach(td => {
         const percentage = Math.floor(td.innerText.substring(0, td.innerText.length - 1));
-        td.style.backgroundColor = `rgba(${255 - Math.floor(percentage * 2.55)}, ${Math.floor(percentage * 2.55)}, 0, 0.25)`;
+        if (percentage === 100) {
+          td.style.backgroundColor = 'hsla(120, 100%, 50%, 0.25)';
+        } else {
+          td.style.backgroundColor = `hsla(0, 100%, 50%, ${0.334 - percentage / 300.0})`
+        }
       })
     </script>
   </body>
