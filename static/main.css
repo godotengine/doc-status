@@ -41,6 +41,8 @@ table {
 td {
   border: 1px solid hsla(0, 0%, 50%, 50%);
   padding: 0.25rem 0.5rem;
+  /* Prefer horizontal scrolling to wrapping over several lines. */
+  white-space: nowrap;
 }
 
 tr:hover {
