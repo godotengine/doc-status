@@ -29,9 +29,15 @@
 
       document.querySelectorAll('td:last-child').forEach(td => {
         const docLink = td.querySelector('a');
-        // Only keep the last fragment and trim the file extension to make the table less wide.
-        const docLinkSplit = docLink.innerText.split('/');
-        docLink.innerText = docLinkSplit[docLinkSplit.length - 1].slice(0, -5);
+        if (docLink) {
+          // Only keep the last fragment and trim the file extension to make the table less wide.
+          const docLinkSplit = docLink.innerText.split('/');
+          const finalText = docLinkSplit[docLinkSplit.length - 1].slice(0, -5);
+          if (finalText.length >= 1) {
+            // Don't override the Overall link as it's short enough to be displayed in full.
+            docLink.innerText = finalText;
+          }
+        }
       });
     </script>
   </body>
