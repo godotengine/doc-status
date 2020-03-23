@@ -19,6 +19,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+h1,
+p {
+  text-align: center;
+}
+
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -30,6 +35,7 @@ a:hover {
 
 table {
   border-collapse: collapse;
+  margin: 2rem auto 0 auto;
 }
 
 td {
