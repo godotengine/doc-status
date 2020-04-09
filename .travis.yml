@@ -22,8 +22,7 @@ deploy:
 
   # Deploy to an organization repository's `master` branch to benefit from
   # a shorter, prettier URL.
-  repo: godot-doc-status/godot-doc-status.github.io
-  target_branch: master
+  target_branch: gh-pages
 
   # Only deploy from the `master` branch.
   on:

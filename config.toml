@@ -1,4 +1,4 @@
-baseURL = "https://godot-doc-status.github.io/"
+baseURL = "https://godotengine.github.io/doc-status/"
 languageCode = "en-us"
 title = "Godot class reference status"
 
