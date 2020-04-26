@@ -6,9 +6,12 @@ language: python
 python:
   - 3.8
 
+env:
+  - HUGO_VERSION="0.69.2"
+
 install:
-  - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.65.3/hugo_0.65.3_Linux-64bit.tar.gz
-  - tar xf hugo_0.65.3_Linux-64bit.tar.gz hugo
+  - curl -LO "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
+  - tar xf "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" hugo
   - sudo mv hugo /usr/local/bin/
 
 script:
@@ -19,9 +22,6 @@ deploy:
   skip_cleanup: true
   local_dir: public
   token: $GITHUB_TOKEN
-
-  # Deploy to an organization repository's `master` branch to benefit from
-  # a shorter, prettier URL.
   target_branch: gh-pages
 
   # Only deploy from the `master` branch.
