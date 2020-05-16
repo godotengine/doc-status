@@ -21,7 +21,8 @@ Generated from Godot commit [$COMMIT_HASH](https://github.com/godotengine/godot/
 EOF
 
 # Trim the first line of the output to get a valid Markdown table.
-python3 "$TMP/doc/tools/doc_status.py" -u "$TMP/doc/classes" | tail -n +2 >> content/_index.md
+# Ensure that module documentation is also included in the report.
+python3 "$TMP/doc/tools/doc_status.py" -u "$TMP/doc/classes" "$TMP"/modules/*/doc_classes | tail -n +2 >> content/_index.md
 
 # Build the website with optimizations enabled.
 hugo --minify
