@@ -6,7 +6,9 @@ View the completion status of the Godot class reference (updated daily).
 
 ## License
 
-Copyright © 2020 Hugo Locurcio and contributors
+- Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
+- Copyright (c) 2014-2020 Godot Engine contributors
+  (cf. <https://github.com/godotengine/godot/blob/master/AUTHORS.md>).
 
-- Unless otherwise specified, files in this repository are licensed under the
-  MIT license, see [LICENSE.md](LICENSE.md) for more information.
+Unless otherwise specified, files in this repository are licensed under the
+MIT license. See [LICENSE.txt](LICENSE.txt) for more information.
