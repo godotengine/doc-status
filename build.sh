@@ -11,12 +11,15 @@ mkdir -p content/
 rm -f content/_index.md
 
 # Add Git commit information to the generated page.
-# Must end with a blank line so the table that will be appended can be parsed correctly.
 COMMIT_HASH="$(git -C "$TMP" rev-parse --short=9 HEAD)"
+COMMIT_DATE="$(git log -1 --pretty=%cd --date=format:%Y-%m-%d)"
+# This template must end with a blank line so the table that will be appended
+# can be parsed correctly.
 cat << EOF > content/_index.md
 # Godot class reference status
 
-Generated from Godot commit [$COMMIT_HASH](https://github.com/godotengine/godot/commit/$COMMIT_HASH).
+Generated from Godot commit [$COMMIT_HASH](https://github.com/godotengine/godot/commit/$COMMIT_HASH)
+($COMMIT_DATE).
 
 Interested in contributing? See
 [Contribute to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
