@@ -18,6 +18,10 @@ cat << EOF > content/_index.md
 
 Generated from Godot commit [$COMMIT_HASH](https://github.com/godotengine/godot/commit/$COMMIT_HASH).
 
+Interested in contributing? See
+[Contribute to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
+in the documentation.
+
 EOF
 
 # Trim the first line of the output to get a valid Markdown table.
