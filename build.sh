@@ -24,6 +24,10 @@ EOF
 # Ensure that module documentation is also included in the report.
 python3 "$TMP/doc/tools/doc_status.py" -u "$TMP/doc/classes" "$TMP"/modules/*/doc_classes | tail -n +2 >> content/_index.md
 
+# Fade out `0/0` completion ratios as they can't be completed (there's nothing
+# to document).
+sed -i 's:0/0:<span style="opacity\: 0.5">0/0</span>:g' content/_index.md
+
 # Build the website with optimizations enabled.
 hugo --minify
 
