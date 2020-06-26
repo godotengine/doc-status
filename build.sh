@@ -34,9 +34,17 @@ EOF
 # Ensure that module documentation is also included in the report.
 python3 "$TMP/doc/tools/doc_status.py" -u "$TMP/doc/classes" "$TMP"/modules/*/doc_classes | tail -n +2 >> content/_index.md
 
-# Fade out `0/0` completion ratios as they can't be completed (there's nothing
-# to document).
+# Fade out `0/0` completion ratios as they can't be completed (there's nothing to document).
 sed -i 's:0/0:<span style="opacity\: 0.5">0/0</span>:g' content/_index.md
+
+# Add classes for completion percentages to style them for easier visual grepping.
+# Incomplete percentages (0-99%).
+sed -Ei 's:\s([0-9][0-9]?)%:<span class="completion-incomplete" style="--percentage\: \1">\1%</span>:g' content/_index.md
+# Complete percentages (100%).
+sed -Ei 's:100%:<span class="completion-complete">100%</span>:g' content/_index.md
+
+# Shorten class links' text to decrease the table's width.
+sed -Ei 's:(https\:.+(class_.+)\.html):[\2](\1):g' content/_index.md
 
 # Build the website with optimizations enabled.
 hugo --minify
