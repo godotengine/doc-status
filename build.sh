@@ -12,7 +12,10 @@ rm -f content/_index.md
 
 # Add Git commit information to the generated page.
 COMMIT_HASH="$(git -C "$TMP" rev-parse --short=9 HEAD)"
-COMMIT_DATE="$(git log -1 --pretty=%cd --date=format:%Y-%m-%d)"
+COMMIT_DATE="$(git -C "$TMP" log -1 --pretty=%cd --date=format:%Y-%m-%d)"
+echo -e "\nBuilding status page for Godot commit $COMMIT_HASH ($COMMIT_DATE):"
+echo "https://github.com/godotengine/godot/commit/$COMMIT_HASH"
+
 # This template must end with a blank line so the table that will be appended
 # can be parsed correctly.
 cat << EOF > content/_index.md
