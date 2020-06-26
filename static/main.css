@@ -2,6 +2,7 @@
   --body-background-color: hsl(0, 0%, 100%);
   --body-color: hsl(0, 0%, 25%);
   --link-color: hsl(210, 90%, 50%);
+  --completion-complete-color: hsl(125, 60%, 35%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -9,6 +10,7 @@
     --body-background-color: hsl(0, 0%, 20%);
     --body-color: hsl(0, 0%, 85%);
     --link-color: hsl(210, 100%, 80%);
+    --completion-complete-color: hsl(125, 50%, 65%);
   }
 }
 
@@ -61,4 +63,22 @@ tr:nth-child(even):hover {
 td:first-child {
   font-weight: bold;
   text-align: right;
+}
+
+.completion-complete {
+  color: var(--completion-complete-color);
+}
+
+/* Dynamic coloring depending on the completion percentage. */
+/* Will be fully red at (roughly) 50% completion, and black/white (depending on the theme) at 99%. */
+.completion-incomplete {
+  font-weight: bold;
+  color: rgb(calc(320 - calc(var(--percentage) * 3.2)), 64, 64);
+}
+
+@media (prefers-color-scheme: dark) {
+  .completion-incomplete {
+    --green-blue: calc(80 + calc(var(--percentage) * 2));
+    color: rgb(255, var(--green-blue), var(--green-blue));
+  }
 }
