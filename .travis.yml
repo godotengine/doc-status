@@ -7,7 +7,7 @@ python:
   - 3.8
 
 env:
-  - HUGO_VERSION="0.71.0"
+  - HUGO_VERSION="0.74.3"
 
 install:
   - curl -LO "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
