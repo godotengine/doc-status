@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-IFS='$\n\t'
+IFS=$'\n\t'
 
 TMP="$(mktemp -d)"
 git clone --depth=1 https://github.com/godotengine/godot.git "$TMP"
