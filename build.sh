@@ -21,7 +21,7 @@ echo "https://github.com/godotengine/godot/commit/$COMMIT_HASH"
 cat << EOF > content/_index.md
 # Godot class reference status
 
-Generated from Godot commit [$COMMIT_HASH](https://github.com/godotengine/godot/commit/$COMMIT_HASH)
+Generated from Godot commit [\`$COMMIT_HASH\`](https://github.com/godotengine/godot/commit/$COMMIT_HASH)
 ($COMMIT_DATE).
 
 Interested in contributing? See
