@@ -2,6 +2,7 @@
 
 set -euo pipefail
 IFS=$'\n\t'
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
 TMP="$(mktemp -d)"
 git clone --depth=1 https://github.com/godotengine/godot.git "$TMP"
