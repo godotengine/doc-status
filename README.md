@@ -4,6 +4,22 @@ View the completion status of the Godot class reference (updated daily).
 
 ## [View](https://godotengine.github.io/doc-status/)
 
+## How it works
+
+- First, `build.sh` performs the following operations:
+  - Clone the Godot Git repository to a temporary directory.
+  - Run `doc/tools/status.py` to generate a Markdown table, with the output
+    redirected to a file. A static header is added at the beginning of the file
+    as well.
+  - Some text manipulation is done on the generated Markdown file to improve
+    readability and visual grepping.
+- [Hugo](https://gohugo.io/) is used to build the HTML template with the
+  referenced Markdown data into a static HTML page.
+- The generated website is deployed to GitHub Pages.
+
+Every day, there's a continuous integration step that runs the tasks above to
+keep the page up-to-date.
+
 ## Development
 
 Follow these instructions to set up this site locally for development purposes:
