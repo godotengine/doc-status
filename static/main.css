@@ -65,6 +65,20 @@ td:first-child {
   text-align: right;
 }
 
+/* Sticky header for the table. */
+th {
+    background: #333333;
+    box-shadow: 0px 2px 2px 0px rgb(0, 0, 0, 25%);
+    padding: 4px 2px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1; /* Show on top of table cells. */
+    top: 0; /* Stick to the top of the screen. */
+}
+th:first-child {
+  border-left: 1px solid #333333; /* Fixes left border during scroll; must have a valid color, transparent doesn't work. */
+}
+
 .completion-complete {
   color: var(--completion-complete-color);
 }
