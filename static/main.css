@@ -1,6 +1,7 @@
 :root {
   --body-background-color: hsl(0, 0%, 100%);
   --body-color: hsl(0, 0%, 25%);
+  --table-sticky-background-color: hsl(0, 0%, 92%);
   --link-color: hsl(210, 90%, 50%);
   --completion-complete-color: hsl(125, 60%, 35%);
 }
@@ -9,6 +10,7 @@
   :root {
     --body-background-color: hsl(0, 0%, 20%);
     --body-color: hsl(0, 0%, 85%);
+    --table-sticky-background-color: hsl(0, 0%, 20%);
     --link-color: hsl(210, 100%, 80%);
     --completion-complete-color: hsl(125, 50%, 65%);
   }
@@ -67,7 +69,7 @@ td:first-child {
 
 /* Sticky header for the table. */
 th {
-    background: #333333;
+    background: var(--table-sticky-background-color);
     box-shadow: 0px 2px 2px 0px rgb(0, 0, 0, 25%);
     padding: 4px 2px;
     position: -webkit-sticky;
@@ -76,7 +78,7 @@ th {
     top: 0; /* Stick to the top of the screen. */
 }
 th:first-child {
-  border-left: 1px solid #333333; /* Fixes left border during scroll; must have a valid color, transparent doesn't work. */
+  border-left: 1px solid var(--table-sticky-background-color); /* Fixes left border during scroll; must have a valid color, transparent doesn't work. */
 }
 
 .completion-complete {
