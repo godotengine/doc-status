@@ -4,7 +4,7 @@ on:
   push:
   schedule:
     # Every day at midnight (UTC).
-    # This keeps the list of proposals fresh.
+    # This keeps the class reference status page fresh.
     - cron: '0 0 * * *'
 
 jobs:
