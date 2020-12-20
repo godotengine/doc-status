@@ -8,10 +8,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-background-color: hsl(0, 0%, 20%);
-    --body-color: hsl(0, 0%, 85%);
-    --table-sticky-background-color: hsl(0, 0%, 20%);
-    --link-color: hsl(210, 100%, 80%);
+    --body-background-color: hsl(180, 5%, 15%);
+    --body-color: hsl(0, 0%, 80%);
+    --table-sticky-background-color: hsl(180, 5%, 15%);
+    --link-color: hsl(200, 50%, 60%);
     --completion-complete-color: hsl(125, 50%, 65%);
   }
 }
