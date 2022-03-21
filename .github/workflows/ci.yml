@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         # Only deploy from the `master` branch, and never deploy from pull requests.
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        if: ${{ (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # The branch the action should deploy to.
