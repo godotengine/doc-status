@@ -2,6 +2,8 @@ name: Continuous integration
 
 on:
   push:
+  pull_request:
+  workflow_dispatch:
   schedule:
     # Every day at midnight (UTC).
     # This keeps the class reference status page fresh.
@@ -17,7 +19,7 @@ jobs:
 
       - name: Generate class reference table and build website
         env:
-          HUGO_VERSION: '0.89.2'
+          HUGO_VERSION: '0.95.0'
         run: |
           curl -LO "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
           tar xf "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" hugo
@@ -26,6 +28,8 @@ jobs:
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
+        # Only deploy from the `master` branch, and never deploy from pull requests.
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # The branch the action should deploy to.
