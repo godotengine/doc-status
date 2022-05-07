@@ -19,7 +19,7 @@ jobs:
 
       - name: Generate class reference table and build website
         env:
-          HUGO_VERSION: '0.95.0'
+          HUGO_VERSION: '0.98.0'
         run: |
           curl -LO "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"
           tar xf "hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" hugo
