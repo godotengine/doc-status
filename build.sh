@@ -45,7 +45,7 @@ sed -Ei 's:\s([0-9][0-9]?)%:<span class="completion-incomplete" style="--percent
 sed -Ei 's:100%:<span class="completion-complete">100%</span>:g' content/_index.md
 
 # Shorten class links' text to decrease the table's width.
-sed -Ei 's:(https\:.+(class_.+)\.html):[\2](\1):g' content/_index.md
+sed -Ei 's:(https\:.+classes/(class_.+)\.html):[\2](\1):g' content/_index.md
 
 # Build the website with optimizations enabled.
 hugo --minify
