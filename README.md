@@ -8,7 +8,7 @@ View the completion status of the Godot class reference (updated daily).
 
 - First, `build.sh` performs the following operations:
   - Clone the Godot Git repository to a temporary directory.
-  - Run `doc/tools/status.py` to generate a Markdown table, with the output
+  - Run `doc/tools/doc_status.py` to generate a Markdown table, with the output
     redirected to a file. A static header is added at the beginning of the file
     as well.
   - Some text manipulation is done on the generated Markdown file to improve
