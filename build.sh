@@ -27,7 +27,9 @@ Generated from Godot commit [\`$COMMIT_HASH\`](https://github.com/godotengine/go
 
 Interested in contributing? See
 [Contribute to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
-in the documentation.
+in the documentation. To avoid conflicts with pending contributions, check
+[open documentation pull requests](https://github.com/godotengine/godot/pulls?q=is%3Apr+is%3Aopen+label%3Adocumentation)
+before starting to work on a class.
 
 EOF
 
