@@ -38,7 +38,7 @@ EOF
 python3 "$GODOT_TMP_DIR/doc/tools/doc_status.py" -u "$GODOT_TMP_DIR/doc/classes" "$GODOT_TMP_DIR"/modules/*/doc_classes | tail -n +2 >> content/_index.md
 
 # Fade out `0/0` completion ratios as they can't be completed (there's nothing to document).
-sed -i 's:0/0:<span style="opacity\: 0.5">0/0</span>:g' content/_index.md
+sed -i 's:0/0:<span style="opacity\: 0.3">0/0</span>:g' content/_index.md
 
 # Add classes for completion percentages to style them for easier visual grepping.
 # Incomplete percentages (0-99%).
