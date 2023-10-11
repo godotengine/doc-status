@@ -76,6 +76,7 @@ th {
     position: sticky;
     z-index: 1; /* Show on top of table cells. */
     top: 0; /* Stick to the top of the screen. */
+    cursor: pointer; /* Visually hint that headers can be interacted with. */
 }
 th:first-child {
   border-left: 1px solid var(--table-sticky-background-color); /* Fixes left border during scroll; must have a valid color, transparent doesn't work. */
