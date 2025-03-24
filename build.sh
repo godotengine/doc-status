@@ -35,7 +35,7 @@ EOF
 
 # Trim the first line of the output to get a valid Markdown table.
 # Ensure that module and platform documentation is also included in the report.
-python3 "$GODOT_TMP_DIR/doc/tools/doc_status.py" -u "$GODOT_TMP_DIR/doc/classes" "$GODOT_TMP_DIR"/modules/*/doc_classes "$GODOT_TMP_DIR"/platform/*/doc_classes | tail -n +2 >> content/_index.md
+NO_COLOR=1 python3 "$GODOT_TMP_DIR/doc/tools/doc_status.py" -u "$GODOT_TMP_DIR/doc/classes" "$GODOT_TMP_DIR"/modules/*/doc_classes "$GODOT_TMP_DIR"/platform/*/doc_classes | tail -n +2 >> content/_index.md
 
 # Fade out `0/0` completion ratios as they can't be completed (there's nothing to document).
 sed -i 's:0/0:<span style="opacity\: 0.3">0/0</span>:g' content/_index.md
