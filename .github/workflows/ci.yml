@@ -12,10 +12,10 @@ on:
 jobs:
   deploy:
     name: Build and deploy to GitHub Pages
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Generate class reference table and build website
         env:
@@ -27,7 +27,7 @@ jobs:
           ./build.sh
 
       - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         # Only deploy from the `master` branch, and never deploy from pull requests.
         if: ${{ (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' }}
         with:
