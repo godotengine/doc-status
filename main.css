@@ -1,0 +1,101 @@
+:root {
+  --body-background-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 25%);
+  --table-sticky-background-color: hsl(0, 0%, 92%);
+  --link-color: hsl(210, 90%, 50%);
+  --completion-complete-color: hsl(125, 60%, 35%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background-color: hsl(180, 5%, 15%);
+    --body-color: hsl(0, 0%, 80%);
+    --table-sticky-background-color: hsl(180, 5%, 15%);
+    --link-color: hsl(200, 50%, 60%);
+    --completion-complete-color: hsl(125, 50%, 65%);
+  }
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+  /* Use a modern font stack inspired by Bootstrap 4. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 2rem auto 0 auto;
+}
+
+td {
+  border: 1px solid hsla(0, 0%, 50%, 50%);
+  padding: 0.25rem 0.5rem;
+  /* Prefer horizontal scrolling to wrapping over several lines. */
+  white-space: nowrap;
+}
+
+tr:hover {
+  background-color: hsla(210, 90%, 50%, 12.5%);
+}
+
+tr:nth-child(even) {
+  background-color: hsla(0, 0%, 50%, 10%);
+}
+
+tr:nth-child(even):hover {
+  background-color: hsla(210, 90%, 50%, 15%);
+}
+
+/* Align class names to the right for better readability and highlight them. */
+td:first-child {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Sticky header for the table. */
+th {
+    background: var(--table-sticky-background-color);
+    box-shadow: 0px 2px 2px 0px rgb(0, 0, 0, 25%);
+    padding: 4px 2px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1; /* Show on top of table cells. */
+    top: 0; /* Stick to the top of the screen. */
+    cursor: pointer; /* Visually hint that headers can be interacted with. */
+}
+th:first-child {
+  border-left: 1px solid var(--table-sticky-background-color); /* Fixes left border during scroll; must have a valid color, transparent doesn't work. */
+}
+
+.completion-complete {
+  color: var(--completion-complete-color);
+}
+
+/* Dynamic coloring depending on the completion percentage. */
+/* Will be fully red at (roughly) 50% completion, and black/white (depending on the theme) at 99%. */
+.completion-incomplete {
+  font-weight: bold;
+  color: rgb(calc(320 - calc(var(--percentage) * 3.2)), 64, 64);
+}
+
+@media (prefers-color-scheme: dark) {
+  .completion-incomplete {
+    --green-blue: calc(80 + calc(var(--percentage) * 2));
+    color: rgb(255, var(--green-blue), var(--green-blue));
+  }
+}
